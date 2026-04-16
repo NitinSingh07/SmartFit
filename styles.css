@@ -34,13 +34,27 @@ body {
 }
 
 .btn {
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.8rem;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
   border: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+.badge {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.5rem;
+  display: inline-block;
 }
 
 .btn-primary {
@@ -211,17 +225,80 @@ header {
 /* features */
 
 .features {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  gap: 15px;
+  padding: 60px 0;
+  position: relative;
 }
 
-.feature {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
+.section-title {
   text-align: center;
+  margin-bottom: 5rem;
+}
+
+.section-title h2 {
+  font-size: 3rem;
+  color: var(--dark);
+  margin-bottom: 1.2rem;
+}
+
+.section-title p {
+  color: #64748b;
+  max-width: 550px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 4rem 2.5rem;
+  border-radius: 40px 10px 40px 10px;
+  text-align: left;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.feature-card:hover {
+  transform: translateY(-12px);
+  background: var(--white);
+  box-shadow: 0 30px 60px rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.feature-icon {
+  margin-bottom: 2rem;
+  color: var(--primary);
+  background: var(--white);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+}
+
+.feature-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.feature-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.feature-card p {
+  color: #64748b;
+  font-size: 1rem;
+  /* line-height: 1.7; */
 }
 
 /* pricing */
