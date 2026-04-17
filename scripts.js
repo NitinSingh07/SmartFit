@@ -8,28 +8,47 @@ menuToggle.addEventListener("click", () => {
 });
 
 const testimonials = [
-  "Amazing watch! Helped me improve my fitness.",
-  "Battery life is incredible. Totally worth it!",
-  "Best smartwatch I’ve used so far.",
+  {
+    text: '"Amazing watch! Helped me improve my fitness dramatically with precise tracking."',
+    name: "Alex Johnson",
+    role: "Professional Trainer"
+  },
+  {
+    text: '"Battery life is incredible. I only charge it once a week, and it still performs perfectly."',
+    name: "Sarah Miller",
+    role: "Marathon Runner"
+  },
+  {
+    text: '"Best smartwatch I’ve used so far. The sleek design and health alerts are a game changer."',
+    name: "Michael Chen",
+    role: "Tech Enthusiast"
+  },
 ];
 
 let currentIndex = 0;
 
 const testimonialText = document.getElementById("testimonial-text");
+const authorName = document.getElementById("author-name");
+const authorRole = document.getElementById("author-role");
 const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
 
-// initial testimonial
-testimonialText.textContent = testimonials[currentIndex];
+function updateTestimonial(index) {
+  testimonialText.textContent = testimonials[index].text;
+  authorName.textContent = testimonials[index].name;
+  authorRole.textContent = testimonials[index].role;
+}
+
+updateTestimonial(0);
 
 nextBtn.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % testimonials.length;
-  testimonialText.textContent = testimonials[currentIndex];
+  updateTestimonial(currentIndex);
 });
 
 prevBtn.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-  testimonialText.textContent = testimonials[currentIndex];
+  updateTestimonial(currentIndex);
 });
 
 const emailInput = document.getElementById("email");

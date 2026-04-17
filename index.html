@@ -134,10 +134,24 @@
     </div>
   </section>
 
-  <section class="testimonials">
-    <p id="testimonial-text">Great product!</p>
-    <button id="prev">Prev</button>
-    <button id="next">Next</button>
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <span class="badge">Testimonials</span>
+        <h2>User <span class="accent">Stories</span></h2>
+      </div>
+      <div class="testimonial-container">
+        <p id="testimonial-text"></p>
+        <div class="testimonial-author">
+          <strong id="author-name"></strong>
+          <span id="author-role"></span>
+        </div>
+        <div class="testimonial-nav">
+          <button id="prev" class="nav-btn">←</button>
+          <button id="next" class="nav-btn">→</button>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="signup">
@@ -210,7 +224,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="scripts.js"></script>
 </body>
 
 </html>

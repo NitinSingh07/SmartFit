@@ -126,7 +126,7 @@ header {
 /* hero */
 
 .hero {
-  padding: 80px 0;
+  padding: 40px 0;
   background: linear-gradient(135deg, #fff 0%, #eff6ff 100%);
   overflow: hidden;
 }
@@ -225,7 +225,7 @@ header {
 /* features */
 
 .features {
-  padding: 60px 0;
+  padding: 40px 0;
   position: relative;
 }
 
@@ -298,13 +298,12 @@ header {
 .feature-card p {
   color: #64748b;
   font-size: 1rem;
-  /* line-height: 1.7; */
 }
 
 /* pricing */
 
 .pricing {
-  padding: 100px 0;
+  padding: 40px 0;
   background: var(--white);
 }
 
@@ -401,18 +400,102 @@ header {
 /* testimonials */
 
 .testimonials {
-  text-align: center;
-  padding: 20px;
+  padding: 80px 0;
 }
+
+.testimonial-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  padding: 1.5rem;
+}
+
+#testimonial-text {
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-author {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--dark);
+}
+
+.testimonial-author span {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.testimonial-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.nav-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: var(--transition);
+  color: var(--dark);
+}
+
+.nav-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: scale(1.1);
+}
+
+/* signup */
 
 .signup {
+  padding: 40px 0;
+  background: var(--white);
   text-align: center;
-  padding: 20px;
 }
 
-input {
-  padding: 8px;
-  margin-right: 10px;
+.signup-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.signup-container input {
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  flex: 1;
+  font-family: inherit;
+}
+
+.error-msg {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 10px;
 }
 
 /* footer */
@@ -420,7 +503,7 @@ input {
 .footer {
   background: #0f172a;
   color: #94a3b8;
-  padding: 80px 0 0;
+  padding: 50px 0 0;
   font-size: 0.9rem;
 }
 
@@ -587,5 +670,11 @@ input {
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .signup-container {
+    flex-direction: column;
   }
 }
