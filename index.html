@@ -154,10 +154,18 @@
     </div>
   </section>
 
-  <section class="signup">
-    <input type="email" id="email" placeholder="Enter email">
-    <button id="submit">Subscribe</button>
-    <p id="error"></p>
+  <section class="signup" id="signup">
+    <div class="container">
+      <div class="section-title">
+        <h2>Stay <span class="accent">Updated</span></h2>
+        <p>Get the latest fitness tips and product updates.</p>
+      </div>
+      <form id="signup-form" class="signup-container">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+      <p id="error" class="error-msg"></p>
+    </div>
   </section>
 
   <footer class="footer">

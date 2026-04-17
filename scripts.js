@@ -7,6 +7,7 @@ menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("active");
 });
 
+
 const testimonials = [
   {
     text: '"Amazing watch! Helped me improve my fitness dramatically with precise tracking."',
@@ -51,25 +52,26 @@ prevBtn.addEventListener("click", () => {
   updateTestimonial(currentIndex);
 });
 
+
+const signupForm = document.getElementById("signup-form");
 const emailInput = document.getElementById("email");
-const submitBtn = document.getElementById("submit");
 const errorMsg = document.getElementById("error");
 
-submitBtn.addEventListener("click", () => {
-  const emailValue = emailInput.value.trim();
+signupForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-  // Simple email regex
+  const emailValue = emailInput.value.trim();
   const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
   if (emailValue === "") {
-    errorMsg.textContent = "Email cannot be empty";
-    errorMsg.style.color = "red";
+    errorMsg.style.color = "#ef4444";
+    errorMsg.textContent = "Email is required.";
   } else if (!emailPattern.test(emailValue)) {
-    errorMsg.textContent = "Enter a valid email";
-    errorMsg.style.color = "red";
+    errorMsg.style.color = "#ef4444";
+    errorMsg.textContent = "Enter a valid email address.";
   } else {
+    errorMsg.style.color = "#22c55e";
     errorMsg.textContent = "Subscribed successfully!";
-    errorMsg.style.color = "green";
     emailInput.value = "";
   }
 });
