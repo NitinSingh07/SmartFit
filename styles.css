@@ -10,6 +10,10 @@
   --transition: all 0.3s ease;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -111,10 +115,13 @@ header {
   color: var(--text);
   font-weight: 500;
   transition: var(--transition);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
 }
 
 .nav a:hover {
   color: var(--primary);
+  border-bottom-color: var(--primary);
 }
 
 .menu-toggle {
@@ -220,6 +227,46 @@ header {
   z-index: 10;
   transform: scale(1.05) rotate(0deg);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.card-1 {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translateY(-15px);
+  }
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--dark);
+}
+
+.stat span {
+  font-size: 0.85rem;
+  color: #64748b;
 }
 
 /* features */
@@ -328,6 +375,7 @@ header {
 .pricing-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border-top: 3px solid var(--primary);
 }
 
 .pricing-card.popular {
@@ -409,6 +457,19 @@ header {
   text-align: center;
   position: relative;
   padding: 1.5rem;
+}
+
+.testimonial-container::before {
+  content: "\201C";
+  font-size: 6rem;
+  color: var(--primary);
+  opacity: 0.1;
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Georgia, serif;
+  line-height: 1;
 }
 
 #testimonial-text {
@@ -704,4 +765,24 @@ header {
   .signup-container {
     flex-direction: column;
   }
+
+  .hero-stats {
+    gap: 2rem;
+  }
+
+  .stat strong {
+    font-size: 1.4rem;
+  }
+}
+
+/* scroll animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
